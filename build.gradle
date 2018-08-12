@@ -32,3 +32,15 @@ dependencies {
 
 apply plugin: 'java'
 
+compileJava {
+    sourceCompatibility = JavaVersion.VERSION_1_10
+    targetCompatibility = JavaVersion.VERSION_1_10
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+}
