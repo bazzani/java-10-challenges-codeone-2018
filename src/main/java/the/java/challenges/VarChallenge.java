@@ -7,11 +7,11 @@ public class VarChallenge {
         var theirVar = new Object(){public Integer doit(){return 1;}};
         var otherVar = yourVar.getClass().newInstance();
 
-        boolean c1 = myVar.getClass().equals(yourVar.getClass());
-        boolean c2 = yourVar.getClass().equals(theirVar.getClass());
-        boolean c3 = otherVar.getClass().equals(yourVar.getClass());
-        boolean c4 = otherVar.getClass().equals(Object.class);
+        String v1 = myVar.getClass().equals(yourVar.getClass()) ? "a" : "b";
+        String v2 = yourVar.getClass().equals(theirVar.getClass()) ? "c" : "d";
+        String v3 = otherVar.getClass().equals(yourVar.getClass()) ? "e" : "f";
+        String v4 = otherVar.getClass().equals(Object.class) ? "g" : "h";
 
-        System.out.println(c1 + ":" + c2 + ":" + c3 + ":" + c4);
+        System.out.println(v1 + ":" + v2 + ":" + v3 + ":" + v4);
     }
 }
