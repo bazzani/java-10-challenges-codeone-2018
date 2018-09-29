@@ -19,6 +19,7 @@ public class VarChallenge {
         System.out.println(join(":", v1, v2, v3, v4));
 
         // anonymous inner classes
-        // 
+        // cons of using var
+        // why did Java use var?
     }
 }
