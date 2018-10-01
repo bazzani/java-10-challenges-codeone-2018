@@ -8,8 +8,8 @@ public class VarChallenge {
        var sue     = new Murphy()  {public Integer hasChildren(){return 3;}};
        var kevin   = new Murphy();
        var bill    = sue.getClass().newInstance();
-       var maureen = Murphy.class;
-       var var     = (Murphy) null;
+       var maureen = (Murphy) null;
+       var var     = Major.class;
 
        String m1 = frank.getClass().equals(sue.getClass())       ? "a" : "b";
        String m2 = sue.hasChildren().equals(frank.hasChildren()) ? "c" : "d";
@@ -19,9 +19,13 @@ public class VarChallenge {
        System.out.println(join(":", m1, m2, m3, m4));
    }
    static class Murphy {}
+   static class Major extends Murphy {}
 }
+
+
+
 
 // Non-Denotable types (like Anonymous Classes) can be inferred by var.
 // assigning null to var
 // cons of using var
-// why did Java use var?
+// why did Java use var? - show generics example Gen/1/2/3
