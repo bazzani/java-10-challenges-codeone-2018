@@ -1,27 +1,27 @@
 package the.java.challenges;
 
-import java.lang.reflect.InvocationTargetException;
-
 import static java.lang.String.join;
 
 public class VarChallenge {
-   public static void main(String[] args) throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-       var myVar = new Object();
-       var yourVar = new Object(){public Integer doit(){return 1;}};
-       var theirVar = new Object(){public Integer doit(){return 1;}};
-       var otherVar = yourVar.getClass().getDeclaredConstructor().newInstance();
+   public static void main(String[] args) throws IllegalAccessException, InstantiationException {
+       var frank   = new Murphy()  {public Integer hasChildren(){return 3;}};
+       var sue     = new Murphy()  {public Integer hasChildren(){return 3;}};
+       var kevin   = new Murphy();
+       var bill    = sue.getClass().newInstance();
+       var maureen = Murphy.class;
+       var var     = (Murphy) null;
 
-var x = (Object) null;
+       String m1 = frank.getClass().equals(sue.getClass())       ? "a" : "b";
+       String m2 = sue.hasChildren().equals(frank.hasChildren()) ? "c" : "d";
+       String m3 = sue.getClass().equals(kevin.getClass())       ? "e" : "f";
+       String m4 = bill.getClass().equals(sue.getClass())        ? "g" : "h";
 
-       String v1 = myVar.getClass().equals(yourVar.getClass())    ? "a" : "b";
-       String v2 = yourVar.getClass().equals(theirVar.getClass()) ? "c" : "d";
-       String v3 = otherVar.getClass().equals(yourVar.getClass()) ? "e" : "f";
-       String v4 = yourVar.doit().equals(otherVar.doit())         ? "g" : "h";
-
-       System.out.println(join(":", v1, v2, v3, v4));
-
-       // anonymous inner classes
-       // cons of using var
-       // why did Java use var?
+       System.out.println(join(":", m1, m2, m3, m4));
    }
+   static class Murphy {}
 }
+
+// Non-Denotable types (like Anonymous Classes) can be inferred by var.
+// assigning null to var
+// cons of using var
+// why did Java use var?
