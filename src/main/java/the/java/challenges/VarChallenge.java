@@ -2,6 +2,11 @@ package the.java.challenges;
 
 import static java.lang.String.join;
 
+// A aceg
+// B bdfh
+// C adeh
+// D bcfg
+
 public class VarChallenge {
    public static void main(String[] args) throws IllegalAccessException, InstantiationException {
        var frank   = new Murphy()  {public Integer hasChildren(){return 3;}};
