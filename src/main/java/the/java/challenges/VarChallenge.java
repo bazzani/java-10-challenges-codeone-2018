@@ -2,15 +2,15 @@ package the.java.challenges;
 
 import static java.lang.String.join;
 
-// A aceg
-// B bdfh
-// C adeh
-// D bcfg
+// A - a:c:e:g
+// B - b:c:f:g
+// C - b:d:f:h
+// D - Throws java.lang.ClassCastException at line 18
 
 public class VarChallenge {
    public static void main(String... fIsForFamily) throws IllegalAccessException, InstantiationException {
-       var frank   = new Murphy()  {public Integer hasChildren(){return 3;}};
-       var sue     = new Murphy()  {public Integer hasChildren(){return 3;}};
+       var frank   = new Murphy() {public Integer hasChildren(){return 3;}};
+       var sue     = new Murphy() {public Integer hasChildren(){return 3;}};
        var kevin   = new Murphy();
        var bill    = sue.getClass().newInstance();
        var maureen = (Murphy) null;
@@ -32,5 +32,7 @@ public class VarChallenge {
 
 // Non-Denotable types (like Anonymous Classes) can be inferred by var.
 // assigning null to var
+// var is not a keyword
+
 // cons of using var
 // why did Java use var? - show generics example Gen/1/2/3

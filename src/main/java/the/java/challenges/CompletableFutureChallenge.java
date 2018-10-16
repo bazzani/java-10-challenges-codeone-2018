@@ -7,22 +7,22 @@ import java.util.concurrent.Executors;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-// A Rating: 0 time to go home :(
-// B time to go home :( Rating: 12
-// C time to go home :( Rating: 14
-// D Rating: 12 time to go home :(
+// A - Rating: 0 time to go home :(
+// B - time to go home :( Rating: 12
+// C - time to go home :( Rating: 14
+// D - Rating: 14 time to go home :(
 
 public class CompletableFutureChallenge {
 
     static ExecutorService executor = Executors.newCachedThreadPool();
 
-    public static void main(String[] args) {
-        CompletableFuture<Void> sanFranAdventure = new CompletableFuture<>();
+    public static void main(String... sanFranciscoAdventure) {
+        CompletableFuture<Void> adventureStart = new CompletableFuture<>();
 
         Supplier<List<String>> sightSupplier = () ->
                 List.of("Alcatraz", "Cable Car", "Golden Gate", "Lombard Street");
 
-        sanFranAdventure.supplyAsync(sightSupplier, executor)
+        adventureStart.supplyAsync(sightSupplier, executor)
                 .thenComposeAsync(sights -> {
                     Supplier<List<Integer>> ratingSupplier = () ->
                             sights.stream()
