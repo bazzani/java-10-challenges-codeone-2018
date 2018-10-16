@@ -8,7 +8,7 @@ import static java.lang.String.join;
 // D bcfg
 
 public class VarChallenge {
-   public static void main(String[] args) throws IllegalAccessException, InstantiationException {
+   public static void main(String... fIsForFamily) throws IllegalAccessException, InstantiationException {
        var frank   = new Murphy()  {public Integer hasChildren(){return 3;}};
        var sue     = new Murphy()  {public Integer hasChildren(){return 3;}};
        var kevin   = new Murphy();
