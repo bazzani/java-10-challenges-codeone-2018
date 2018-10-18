@@ -9,23 +9,31 @@ import java.util.function.Function;
 // C - 4
 // D - java.lang.ArithmeticException: / by zero
 
+
+
+
 public class FunctionalInterfaceChallenge {
-    public static void main(String[] breakingBad) {
-        BiFunction<Integer, Integer, Integer> heisenberg = (a, b) -> a + b;
-        Function<Integer, Integer> jesse = a -> a - 2;
+  static BiFunction<Integer, Integer, Integer> heisenberg =
+        (a, b) -> a + b;
 
-        BiConsumer<Integer, Integer> gustavo = (a, b)
-                -> System.out.println(a + 2 / b + 2);
+  static Function<Integer, Integer> jesse = a -> a - 2;
 
-        BiFunction<Integer, Integer, Integer> saul = heisenberg.andThen(jesse);
-        int firstLaunder = saul.apply(2, 2);
+  static BiFunction<Integer, Integer, Integer> saul =
+        heisenberg.andThen(jesse);
+
+  static BiConsumer<Integer, Integer> gustavo =
+        (a, b) -> System.out.println(a + 2 / b + 2);
+
+ public static void main(String[] breakingBad) {
+  var firstLaunder = saul.apply(2, 2);
 
         heisenberg.andThen(jesse);
-        int secondLaunder = heisenberg.apply(2, 2);
+  var secondLaunder = heisenberg.apply(2, 2);
 
-        gustavo.accept(firstLaunder, secondLaunder);
-    }
+  gustavo.accept(firstLaunder, secondLaunder);
+ }
 }
 
-// line 25
-//
+
+
+

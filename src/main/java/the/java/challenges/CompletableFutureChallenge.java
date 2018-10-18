@@ -12,32 +12,32 @@ import java.util.stream.Collectors;
 // C - time to go home :( Rating: 14
 // D - Rating: 14 time to go home :(
 
+
 public class CompletableFutureChallenge {
+  static ExecutorService executor = Executors.newCachedThreadPool();
 
-    static ExecutorService executor = Executors.newCachedThreadPool();
+  public static void main(String... oracleCodeOneAdventure) {
+    CompletableFuture<List<String>> adventureStart = new CompletableFuture<>();
 
-    public static void main(String... sanFranciscoAdventure) {
-        CompletableFuture<Void> adventureStart = new CompletableFuture<>();
+    Supplier<List<String>> sanFranSightSupplier = () ->
+        List.of("Alcatraz", "Cable Car", "Golden Gate", "Lombard Street");
 
-        Supplier<List<String>> sightSupplier = () ->
-                List.of("Alcatraz", "Cable Car", "Golden Gate", "Lombard Street");
-
-        adventureStart.supplyAsync(sightSupplier, executor)
-                .thenComposeAsync(sights -> {
-                    Supplier<List<Integer>> ratingSupplier = () ->
-                            sights.stream()
-                                    .map(String::length)
-                                    .collect(Collectors.toList());
-                    return CompletableFuture.supplyAsync(ratingSupplier);
-                }, executor)
-                .thenAcceptAsync(ratings -> {
-                    Integer rating = ratings.stream()
-                            .dropWhile(sightRating -> sightRating <= 12)
-                            .findFirst()
-                            .orElse(0);
-                    System.out.print("Rating: " + rating + " ");
-                }, executor);
-
-        System.out.print("time to go home :( ");
-    }
+    adventureStart.completeAsync(sanFranSightSupplier, executor)
+        .thenCompose(sights -> {
+            return CompletableFuture.supplyAsync(() -> sights.stream()
+                    .map(String::length)
+                    .collect(Collectors.toList()));
+        })
+        .thenAccept(ratings -> {
+            var rating = ratings.stream()
+                    .dropWhile(sightRating -> sightRating <= 12)
+                    .findFirst()
+                    .orElse(0);
+            System.out.print("Rating: " + rating + " ");
+        });
+    System.out.print("time to go home :( ");
+  }
 }
+
+
+
