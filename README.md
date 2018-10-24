@@ -8,26 +8,29 @@ Material for my presentation of the Java 10 Challenges at Oracle Code One 2018
     * concurrency & reactive
     * https://dzone.com/articles/20-examples-of-using-javas-completablefuture
     * https://www.baeldung.com/java-completablefuture
+    * ... DONE
 1.  Type inference - var
     * https://www.baeldung.com/java-10-local-variable-type-inference
     * https://medium.com/the-java-report/java-10-sneak-peek-local-variable-type-inference-var-3022016e1a2b
+    * https://developer.oracle.com/java/jdk-10-local-variable-type-inference
+    * ... DONE
 1.  Collection factories - Java 9/10
-    * ...
+    * ... DONE
 1.  Functional interfaces in Java 9
-    * ...
-1.  Exceptions/error handling
-    * ...
+    * ... DONE
+1.  ProcessHandle Class
+    * ... TODO
 
     
     ### Rafael's topics
-1.  Modules
-    * ...
+1.  dropWhile/takeWhile
+    * ... DONE
 1.  Reactive Streams
-    * ...
+    * ... DONE
 1.  Interface private and default methods
-    * ...
-1.  ProcessHandle Class
-    * ...
+    * ... DONE
+1.  Exceptions/error handling
+    * ... DONE
 1.  Optional Class
-    * ...
+    * ... DONE
    
