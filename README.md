@@ -16,8 +16,9 @@ Material for my presentation of the Java 10 Challenges at Oracle Code One 2018
    * ...
 1. Functional interfaces in Java 9
    * ...
-1. Exceptions/error handling - 
-   * ...
+1. ProcessHandle API 
+   * https://docs.oracle.com/javase/9/docs/api/java/lang/ProcessHandle.html
+   * https://www.baeldung.com/java-9-process-api
 
 #### Rafael's topics
 1. Modules
